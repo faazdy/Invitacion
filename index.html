@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación al Picnic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero-container">
+        <h1 class="slide-in-left">¡Te invito a la mejor salida de la vida!</h1>
+        <p class="slide-in-right">Una invitación para desconectar, compartir y disfrutar en buena compañía.</p>
+        <button id="ver-btn" onclick="scrollToInvitation()">Ver la invitación</button>
+    </div>
+    <div class="container" id="invitation">
+        <h1>¡Cupón Válido para un Picnic Juntos!</h1>
+        <p class="intro">
+            ¿Quieres ir a un picnic conmigo?
+        </p>
+        
+        <div class="picnic-card">
+            <img src="peach-goma-chicken-burger-nuggets.gif" alt="girasol">
+            <p>Fecha y hora: <strong>?</strong></p>
+            <p>Lugar: <strong>Parque de los novios</strong></p>
+            <button id="accept-btn" class="btn2">Si</button>
+            <button id="reject-btn" class="btn2">No</button>
+        </div>
+
+        <div class="message hidden" id="message">
+            <img src="si.webp" alt="">
+            <p>
+                La fecha y la hora la cuadro contigo :)
+            </p>
+        </div>
+        <div class="reject" id="message-rej" style="display: none;">
+            <img src="rana.webp" alt="sad">
+            <p>
+                okei 
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+:root{
+    --color2: #009473;
+    --color1: #fb6f92;
+    --color3: #e36414;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    height: 100vh;
+}
+.hero-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(bg3.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px;
+
+    position: relative;
+    z-index: 1;
+    h1, p, button{
+        z-index: 3;
+    }
+}
+.hero-container::before{
+    content: '';
+    top: 0; right: 0; left: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.425);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    position: absolute;
+}
+
+.hero-container h1 {
+    color: var(--color1);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero-container button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: var(--color1);
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hero-container button:hover {
+    transform: scale(1.1);
+}
+.hero-container h1, .hero-container p {
+    opacity: 0; /* Ocultamos inicialmente */
+}
+
+/* Animación para el H1 desde la izquierda */
+.slide-in-left {
+    animation: slideInLeft 1s forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animación para el P desde la derecha */
+.slide-in-right {
+    animation: slideInRight 1s forwards;
+    animation-delay: 0.5s; /* Retraso para que aparezca después del H1 */
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--color1);
+    margin-bottom: 10px;
+}
+
+.intro {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.picnic-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.picnic-card:hover {
+    transform: scale(1.05);
+}
+
+.picnic-card img {
+    width: 150px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: translateY(999px);
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+p + .btn2{
+    margin-top: 1.5em;
+}
+.btn2 {
+    padding: 10px 20px;
+    background-color: var(--color1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    opacity: 0; /* Inicialmente invisible */
+    transition: background-color 0.3s;
+}
+
+.btn2:hover {
+    background-color: #015e49;
+}
+
+/* Clase de animación */
+.animate-bounce {
+    animation: bounceIn 0.6s ease forwards;
+    opacity: 1; 
+}
+
+
+.message {
+    font-size: 1.5em;
+    color: var(--color1);
+    font-weight: bold;
+    margin-top: 20px;
+    img{width: 100%; max-width: 300px;}
+}
+
+.reject img{
+    width: 100%;
+    max-width: 300px;
+}
+.hidden {
+    display: none;
+}
